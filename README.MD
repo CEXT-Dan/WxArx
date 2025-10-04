@@ -16,3 +16,4 @@
 
 I use [DialogBlocks](http://www.anthemion.co.uk/dialogblocks/) to generate XRC files. DialogBlocks will also genreate C++ events
 
+![ScreenShot](./ScreenShot.png)
