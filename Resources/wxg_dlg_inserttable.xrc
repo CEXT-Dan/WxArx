@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource version="2.3.0.1" xmlns="http://www.wxwidgets.org/wxxrc">
+    <object class="wxDialog" name="DLG_INSERTTABLE">
+        <style>wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxCLOSE_BOX|wxTAB_TRAVERSAL</style>
+        <exstyle>wxWS_EX_VALIDATE_RECURSIVELY|wxWS_EX_BLOCK_EVENTS</exstyle>
+        <title>Insert Table</title>
+        <centered>1</centered>
+        <object class="wxPanel" name="ID_DLGTABLE_PANEL">
+            <style>wxTAB_TRAVERSAL</style>
+            <object class="wxBoxSizer">
+                <orient>wxVERTICAL</orient>
+                <object class="sizeritem">
+                    <flag>wxGROW|wxALL</flag>
+                    <border>5</border>
+                    <option>1</option>
+                    <object class="wxBoxSizer">
+                        <orient>wxHORIZONTAL</orient>
+                        <object class="sizeritem">
+                            <flag>wxGROW|wxALL</flag>
+                            <border>2</border>
+                            <option>1</option>
+                            <object class="wxBoxSizer">
+                                <orient>wxVERTICAL</orient>
+                                <object class="sizeritem">
+                                    <flag>wxGROW|wxALL</flag>
+                                    <border>2</border>
+                                    <object class="wxStaticBoxSizer" name="wxID_ANY">
+                                        <orient>wxHORIZONTAL</orient>
+                                        <label>Table Style</label>
+                                        <object class="sizeritem">
+                                            <flag>wxALIGN_TOP|wxALL</flag>
+                                            <border>3</border>
+                                            <option>1</option>
+                                            <object class="wxComboBox" name="IDC_COMBOBOX_TABLE_STYLE">
+                                                <tooltip>Choose a table style that will be used for creating this table</tooltip>
+                                                <style>wxCB_READONLY</style>
+                                            </object>
+                                        </object>
+                                        <object class="sizeritem">
+                                            <flag>wxALIGN_TOP|wxALL</flag>
+                                            <border>2</border>
+                                            <object class="wxBitmapButton" name="IDC_BUTTON_OPEN_TABLESYLE">
+                                                <size>23,23</size>
+                                                <tooltip>View table styles in the drawing explorer</tooltip>
+                                                <style>wxBU_AUTODRAW</style>
+                                            </object>
+                                        </object>
+                                    </object>
+                                </object>
+                                <object class="sizeritem">
+                                    <flag>wxGROW|wxALL</flag>
+                                    <border>2</border>
+                                    <object class="wxStaticBoxSizer" name="wxID_ANY">
+                                        <orient>wxHORIZONTAL</orient>
+                                        <label>Cell Styles</label>
+                                        <object class="sizeritem">
+                                            <flag>wxGROW|wxALL</flag>
+                                            <border>2</border>
+                                            <option>1</option>
+                                            <object class="wxGridSizer">
+                                                <cols>2</cols>
+                                                <rows>3</rows>
+                                                <vgap>0</vgap>
+                                                <hgap>0</hgap>
+                                                <object class="sizeritem">
+                                                    <flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                    <border>0</border>
+                                                    <object class="wxStaticText" name="ID_STATIC">
+                                                        <label>First Row Cell Style:</label>
+                                                    </object>
+                                                </object>
+                                                <object class="sizeritem">
+                                                    <flag>wxGROW|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                    <border>2</border>
+                                                    <option>1</option>
+                                                    <object class="wxComboBox" name="ID_COMBOBOX_FIRST_CELL_STYLE">
+                                                        <tooltip>Select a cell style to be used for this row</tooltip>
+                                                        <style>wxCB_READONLY</style>
+                                                        <content>
+                                                            <item>Data</item>
+                                                            <item>Header</item>
+                                                            <item>Title</item>
+                                                        </content>
+                                                        <selection>2</selection>
+                                                    </object>
+                                                </object>
+                                                <object class="sizeritem">
+                                                    <flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                    <border>0</border>
+                                                    <object class="wxStaticText" name="ID_STATIC">
+                                                        <label>Second Row Cell Style:</label>
+                                                    </object>
+                                                </object>
+                                                <object class="sizeritem">
+                                                    <flag>wxGROW|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                    <border>2</border>
+                                                    <option>1</option>
+                                                    <object class="wxComboBox" name="ID_COMBOBOX_2ND_CELL_STYLE">
+                                                        <tooltip>Select a cell style to be used for this row</tooltip>
+                                                        <style>wxCB_READONLY</style>
+                                                        <content>
+                                                            <item>Data</item>
+                                                            <item>Header</item>
+                                                            <item>Title</item>
+                                                        </content>
+                                                        <selection>1</selection>
+                                                    </object>
+                                                </object>
+                                                <object class="sizeritem">
+                                                    <flag>wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                    <border>0</border>
+                                                    <object class="wxStaticText" name="ID_STATIC">
+                                                        <label>All Other Row Cell Style:</label>
+                                                    </object>
+                                                </object>
+                                                <object class="sizeritem">
+                                                    <flag>wxGROW|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                    <border>2</border>
+                                                    <option>1</option>
+                                                    <object class="wxComboBox" name="ID_COMBOBOX_REST_CELL_STYLE">
+                                                        <tooltip>Select a cell style to be used for these rows</tooltip>
+                                                        <style>wxCB_READONLY</style>
+                                                        <content>
+                                                            <item>Data</item>
+                                                            <item>Header</item>
+                                                            <item>Title</item>
+                                                        </content>
+                                                        <selection>0</selection>
+                                                    </object>
+                                                </object>
+                                            </object>
+                                        </object>
+                                    </object>
+                                </object>
+                                <object class="sizeritem">
+                                    <flag>wxGROW|wxALL</flag>
+                                    <border>2</border>
+                                    <option>1</option>
+                                    <object class="wxBoxSizer">
+                                        <orient>wxHORIZONTAL</orient>
+                                        <object class="sizeritem">
+                                            <flag>wxGROW|wxALL</flag>
+                                            <border>0</border>
+                                            <option>1</option>
+                                            <object class="wxStaticBoxSizer" name="wxID_ANY">
+                                                <orient>wxHORIZONTAL</orient>
+                                                <label>Preview</label>
+                                                <object class="sizeritem">
+                                                    <flag>wxGROW|wxALL</flag>
+                                                    <border>3</border>
+                                                    <option>1</option>
+                                                    <object class="wxStaticBitmap" name="IDC_TABLE_PREVIEW">
+                                                        <size>280,172</size>
+                                                        <style>wxSUNKEN_BORDER</style>
+                                                    </object>
+                                                </object>
+                                            </object>
+                                        </object>
+                                    </object>
+                                </object>
+                            </object>
+                        </object>
+                        <object class="sizeritem">
+                            <flag>wxGROW|wxALL</flag>
+                            <border>2</border>
+                            <object class="wxBoxSizer">
+                                <orient>wxVERTICAL</orient>
+                                <object class="sizeritem">
+                                    <flag>wxGROW|wxALL</flag>
+                                    <border>2</border>
+                                    <object class="wxStaticBoxSizer" name="wxID_ANY">
+                                        <orient>wxVERTICAL</orient>
+                                        <label>Table Options</label>
+                                        <object class="sizeritem">
+                                            <flag>wxALIGN_LEFT|wxALL</flag>
+                                            <border>5</border>
+                                            <object class="wxRadioButton" name="ID_RADIOBUTTON_START_EMPTY">
+                                                <tooltip>Creates a table that is fill in manualy </tooltip>
+                                                <style>wxRB_GROUP</style>
+                                                <label>Start From Empty Table</label>
+                                                <value>1</value>
+                                            </object>
+                                        </object>
+                                        <object class="sizeritem">
+                                            <flag>wxALIGN_LEFT|wxALL</flag>
+                                            <border>5</border>
+                                            <object class="wxRadioButton" name="ID_RADIOBUTTON_FROM_DATA">
+                                                <tooltip>Creates a table using external data</tooltip>
+                                                <label>From Data</label>
+                                                <value>0</value>
+                                            </object>
+                                        </object>
+                                        <object class="sizeritem">
+                                            <flag>wxGROW|wxALL</flag>
+                                            <border>0</border>
+                                            <object class="wxBoxSizer">
+                                                <orient>wxHORIZONTAL</orient>
+                                                <object class="spacer">
+                                                    <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                    <border>5</border>
+                                                    <size>5,5</size>
+                                                </object>
+                                                <object class="sizeritem">
+                                                    <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                    <border>5</border>
+                                                    <option>1</option>
+                                                    <object class="wxComboBox" name="IDC_COMBOBOX_FROM_DATA">
+                                                        <tooltip>Choose data type to create table from</tooltip>
+                                                        <style>wxCB_READONLY</style>
+                                                        <content>
+                                                            <item>File</item>
+                                                            <item>DataLink</item>
+                                                        </content>
+                                                    </object>
+                                                </object>
+                                                <object class="sizeritem">
+                                                    <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                    <border>1</border>
+                                                    <object class="wxButton" name="ID_BUTTON_OPEN_DATA">
+                                                        <size>30,23</size>
+                                                        <tooltip>Browse for data file, you can choose data types by changing available file extentions</tooltip>
+                                                        <label>...</label>
+                                                    </object>
+                                                </object>
+                                            </object>
+                                        </object>
+                                        <object class="sizeritem">
+                                            <flag>wxGROW|wxALL</flag>
+                                            <border>5</border>
+                                            <object class="wxBoxSizer">
+                                                <orient>wxHORIZONTAL</orient>
+                                                <object class="sizeritem">
+                                                    <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                    <border>5</border>
+                                                    <object class="wxStaticText" name="ID_STATIC_SEP">
+                                                        <label>Delimiter:</label>
+                                                    </object>
+                                                </object>
+                                                <object class="sizeritem">
+                                                    <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                    <border>2</border>
+                                                    <object class="wxComboBox" name="ID_TEXTCTRL_SEP">
+                                                        <tooltip>Choose a seperator for CSV type files</tooltip>
+                                                        <style>wxCB_READONLY</style>
+                                                        <content>
+                                                            <item>Semicolon</item>
+                                                            <item>Comma</item>
+                                                            <item>Space</item>
+                                                            <item>Tab</item>
+                                                        </content>
+                                                        <selection>0</selection>
+                                                    </object>
+                                                </object>
+                                            </object>
+                                        </object>
+                                    </object>
+                                </object>
+                                <object class="sizeritem">
+                                    <flag>wxGROW|wxALL</flag>
+                                    <border>2</border>
+                                    <object class="wxStaticBoxSizer" name="wxID_ANY">
+                                        <orient>wxVERTICAL</orient>
+                                        <label>Insertion Behavior</label>
+                                        <object class="sizeritem">
+                                            <flag>wxALIGN_LEFT|wxALL</flag>
+                                            <border>5</border>
+                                            <object class="wxRadioButton" name="IDC_RADIOBUTTON_INSERT_POINT">
+                                                <tooltip>Location to insert table </tooltip>
+                                                <style>wxRB_GROUP</style>
+                                                <label>Specify Insertion Point</label>
+                                                <value>1</value>
+                                            </object>
+                                        </object>
+                                        <object class="sizeritem">
+                                            <flag>wxALIGN_LEFT|wxALL</flag>
+                                            <border>5</border>
+                                            <object class="wxRadioButton" name="IDC_RADIOBUTTON_SPECIFY_WINDOW">
+                                                <tooltip>Location to insert table, drag mouse to add more cells</tooltip>
+                                                <label>Specify Window</label>
+                                                <value>0</value>
+                                            </object>
+                                        </object>
+                                    </object>
+                                </object>
+                                <object class="sizeritem">
+                                    <flag>wxGROW|wxALL</flag>
+                                    <border>2</border>
+                                    <option>1</option>
+                                    <object class="wxStaticBoxSizer" name="wxID_ANY">
+                                        <orient>wxVERTICAL</orient>
+                                        <label>Column / Row Settings</label>
+                                        <object class="sizeritem">
+                                            <flag>wxGROW|wxALL</flag>
+                                            <border>0</border>
+                                            <object class="wxBoxSizer">
+                                                <orient>wxHORIZONTAL</orient>
+                                                <object class="sizeritem">
+                                                    <flag>wxGROW|wxALL</flag>
+                                                    <border>0</border>
+                                                    <object class="wxBoxSizer">
+                                                        <orient>wxVERTICAL</orient>
+                                                        <object class="sizeritem">
+                                                            <flag>wxALIGN_LEFT|wxALL</flag>
+                                                            <border>5</border>
+                                                            <object class="wxRadioButton" name="IDC_RADIO_COLUMNS">
+                                                                <tooltip>Specifies the number of columns</tooltip>
+                                                                <style>wxRB_GROUP</style>
+                                                                <label>Columns:</label>
+                                                                <value>0</value>
+                                                            </object>
+                                                        </object>
+                                                        <object class="sizeritem">
+                                                            <flag>wxGROW|wxALL</flag>
+                                                            <border>0</border>
+                                                            <object class="wxBoxSizer">
+                                                                <orient>wxHORIZONTAL</orient>
+                                                                <object class="sizeritem">
+                                                                    <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                                    <border>1</border>
+                                                                    <object class="wxStaticBitmap" name="ID_STATICBITMAP">
+                                                                        <size>19,20</size>
+                                                                    </object>
+                                                                </object>
+                                                                <object class="sizeritem">
+                                                                    <flag>wxALIGN_BOTTOM|wxALL</flag>
+                                                                    <border>1</border>
+                                                                    <option>1</option>
+                                                                    <object class="wxSpinCtrl" name="IDC_SPINCTRL_NUM_COLUMN">
+                                                                        <size>80,23</size>
+                                                                        <tooltip>Specifies the number of columns</tooltip>
+                                                                        <style>wxSP_ARROW_KEYS|wxALIGN_LEFT</style>
+                                                                        <value>5</value>
+                                                                        <min>0</min>
+                                                                        <max>100</max>
+                                                                    </object>
+                                                                </object>
+                                                            </object>
+                                                        </object>
+                                                    </object>
+                                                </object>
+                                                <object class="spacer">
+                                                    <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                    <border>5</border>
+                                                    <size>30,8</size>
+                                                </object>
+                                                <object class="sizeritem">
+                                                    <flag>wxGROW|wxALL</flag>
+                                                    <border>0</border>
+                                                    <object class="wxBoxSizer">
+                                                        <orient>wxVERTICAL</orient>
+                                                        <object class="sizeritem">
+                                                            <flag>wxALIGN_LEFT|wxALL</flag>
+                                                            <border>5</border>
+                                                            <object class="wxRadioButton" name="IDC_RADIO_COLUMN_WIDTH">
+                                                                <tooltip>Specifies the column width</tooltip>
+                                                                <label>Column Width:</label>
+                                                                <value>0</value>
+                                                            </object>
+                                                        </object>
+                                                        <object class="sizeritem">
+                                                            <flag>wxALIGN_LEFT|wxALL</flag>
+                                                            <border>0</border>
+                                                            <option>1</option>
+                                                            <object class="wxBoxSizer">
+                                                                <orient>wxHORIZONTAL</orient>
+                                                                <object class="spacer">
+                                                                    <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                                    <border>5</border>
+                                                                    <size>10,5</size>
+                                                                </object>
+                                                                <object class="sizeritem">
+                                                                    <flag>wxALIGN_BOTTOM|wxALL</flag>
+                                                                    <border>1</border>
+                                                                    <object class="wxTextCtrl" name="IDC_SPINCTRLT_COLUMN_WIDTH">
+                                                                        <size>64,23</size>
+                                                                        <tooltip>Specifies the column width</tooltip>
+                                                                        <style>wxTE_PROCESS_ENTER</style>
+                                                                    </object>
+                                                                </object>
+                                                                <object class="sizeritem">
+                                                                    <flag>wxALIGN_BOTTOM|wxALL</flag>
+                                                                    <border>1</border>
+                                                                    <object class="wxSpinButton" name="IDC_SPINCTRLB_COLUMN_WIDTH">
+                                                                        <size>16,23</size>
+                                                                        <tooltip>Specifies the column width</tooltip>
+                                                                        <style>wxSP_VERTICAL</style>
+                                                                        <value>0</value>
+                                                                        <min>0</min>
+                                                                        <max>100</max>
+                                                                    </object>
+                                                                </object>
+                                                            </object>
+                                                        </object>
+                                                    </object>
+                                                </object>
+                                            </object>
+                                        </object>
+                                        <object class="spacer">
+                                            <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                                            <border>0</border>
+                                            <size>100,15</size>
+                                        </object>
+                                        <object class="sizeritem">
+                                            <flag>wxGROW|wxALL</flag>
+                                            <border>0</border>
+                                            <object class="wxStaticLine" name="wxID_STATIC">
+                                                <style>wxLI_HORIZONTAL</style>
+                                            </object>
+                                        </object>
+                                        <object class="spacer">
+                                            <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                                            <border>0</border>
+                                            <size>100,10</size>
+                                        </object>
+                                        <object class="sizeritem">
+                                            <flag>wxGROW|wxALL</flag>
+                                            <border>0</border>
+                                            <object class="wxBoxSizer">
+                                                <orient>wxHORIZONTAL</orient>
+                                                <object class="sizeritem">
+                                                    <flag>wxGROW|wxALL</flag>
+                                                    <border>0</border>
+                                                    <object class="wxBoxSizer">
+                                                        <orient>wxVERTICAL</orient>
+                                                        <object class="sizeritem">
+                                                            <flag>wxALIGN_LEFT|wxALL</flag>
+                                                            <border>5</border>
+                                                            <object class="wxRadioButton" name="IDC_RADIO_DATA_ROWS">
+                                                                <tooltip>Specifies the number of rows</tooltip>
+                                                                <style>wxRB_GROUP</style>
+                                                                <label>Data Rows:</label>
+                                                                <value>0</value>
+                                                            </object>
+                                                        </object>
+                                                        <object class="sizeritem">
+                                                            <flag>wxGROW|wxALL</flag>
+                                                            <border>0</border>
+                                                            <object class="wxBoxSizer">
+                                                                <orient>wxHORIZONTAL</orient>
+                                                                <object class="sizeritem">
+                                                                    <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                                    <border>1</border>
+                                                                    <object class="wxStaticBitmap" name="ID_STATIC">
+                                                                        <size>19,19</size>
+                                                                    </object>
+                                                                </object>
+                                                                <object class="sizeritem">
+                                                                    <flag>wxALIGN_BOTTOM|wxALL</flag>
+                                                                    <border>1</border>
+                                                                    <option>1</option>
+                                                                    <object class="wxSpinCtrl" name="IDC_SPINCTRL_DATA_ROWS">
+                                                                        <size>80,23</size>
+                                                                        <tooltip>Specifies the number of rows</tooltip>
+                                                                        <style>wxSP_ARROW_KEYS|wxALIGN_LEFT</style>
+                                                                        <value>3</value>
+                                                                        <min>0</min>
+                                                                        <max>100</max>
+                                                                    </object>
+                                                                </object>
+                                                            </object>
+                                                        </object>
+                                                    </object>
+                                                </object>
+                                                <object class="spacer">
+                                                    <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                    <border>5</border>
+                                                    <size>30,8</size>
+                                                </object>
+                                                <object class="sizeritem">
+                                                    <flag>wxGROW|wxALL</flag>
+                                                    <border>0</border>
+                                                    <object class="wxBoxSizer">
+                                                        <orient>wxVERTICAL</orient>
+                                                        <object class="sizeritem">
+                                                            <flag>wxALIGN_LEFT|wxALL</flag>
+                                                            <border>5</border>
+                                                            <object class="wxRadioButton" name="IDC_RADIO_ROW_HEIGHT">
+                                                                <tooltip>Specifies the row height in number of lines, the height of a line is based off the table style, text height and margins</tooltip>
+                                                                <label>Row Height:</label>
+                                                                <value>0</value>
+                                                            </object>
+                                                        </object>
+                                                        <object class="sizeritem">
+                                                            <flag>wxGROW|wxALL</flag>
+                                                            <border>0</border>
+                                                            <object class="wxBoxSizer">
+                                                                <orient>wxHORIZONTAL</orient>
+                                                                <object class="spacer">
+                                                                    <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                                                    <border>5</border>
+                                                                    <size>10,5</size>
+                                                                </object>
+                                                                <object class="sizeritem">
+                                                                    <flag>wxALIGN_BOTTOM|wxALL</flag>
+                                                                    <border>1</border>
+                                                                    <object class="wxSpinCtrl" name="IDC_SPINCTRL_ROW_HEIGHT">
+                                                                        <size>80,23</size>
+                                                                        <tooltip>Specifies the row height in number of lines, the height of a line is based off the table style, text height and margins</tooltip>
+                                                                        <style>wxSP_ARROW_KEYS|wxALIGN_LEFT</style>
+                                                                        <value>1</value>
+                                                                        <min>0</min>
+                                                                        <max>100</max>
+                                                                    </object>
+                                                                </object>
+                                                            </object>
+                                                        </object>
+                                                    </object>
+                                                </object>
+                                            </object>
+                                        </object>
+                                    </object>
+                                </object>
+                            </object>
+                        </object>
+                    </object>
+                </object>
+                <object class="sizeritem">
+                    <flag>wxALIGN_RIGHT|wxALL</flag>
+                    <border>0</border>
+                    <object class="wxBoxSizer">
+                        <orient>wxHORIZONTAL</orient>
+                        <object class="sizeritem">
+                            <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                            <border>0</border>
+                            <object class="wxBoxSizer">
+                                <orient>wxVERTICAL</orient>
+                                <object class="sizeritem">
+                                    <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                                    <border>5</border>
+                                    <object class="wxBoxSizer">
+                                        <orient>wxHORIZONTAL</orient>
+                                        <object class="sizeritem">
+                                            <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                            <border>3</border>
+                                            <object class="wxButton" name="wxID_OK">
+                                                <label>OK</label>
+                                            </object>
+                                        </object>
+                                        <object class="sizeritem">
+                                            <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                            <border>3</border>
+                                            <object class="wxButton" name="wxID_CANCEL">
+                                                <label>Cancel</label>
+                                            </object>
+                                        </object>
+                                    </object>
+                                </object>
+                            </object>
+                        </object>
+                    </object>
+                </object>
+            </object>
+        </object>
+    </object>
+</resource>
