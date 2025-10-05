@@ -1,4 +1,7 @@
 #pragma once
+
+using EntselResult = std::tuple<Acad::PromptStatus, AcDbObjectId, AcGePoint3d>;
+
 class SelectionSet
 {
 private:
@@ -6,13 +9,13 @@ private:
     const ACHAR* m_mode = nullptr;
     const void  *m_point1 = nullptr;
     const void  *m_point2 = nullptr;
-    resbuf  *m_filter = nullptr;
+    const resbuf  *m_filter = nullptr;
     ads_name m_ss = { 0L, 0L };
 
 public:
     SelectionSet(void);
-    SelectionSet(const ACHAR* mode, const void *point1, const void *point2, resbuf *filter);
+    SelectionSet(const ACHAR* mode, const void *point1, const void *point2, const resbuf *filter);
     ~SelectionSet(void);
     AcDbObjectIdArray Select();
-    static const auto entSel(const TCHAR* msg);
+    const EntselResult entSel(const TCHAR* msg = L"\nSelect Entity: ", const AcRxClass* desc = AcDbEntity::desc());
 };

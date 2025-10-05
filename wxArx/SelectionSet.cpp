@@ -1,7 +1,6 @@
 #include "StdAfx.h"
 #include "SelectionSet.h"
 
-//++--
 SelectionSet::SelectionSet(void)
     : m_length(0), m_mode(NULL),
     m_point1(NULL), m_point2(NULL),
@@ -9,22 +8,18 @@ SelectionSet::SelectionSet(void)
 {
 }
 
-//++--
-SelectionSet::SelectionSet(const ACHAR* mode, const void *point1, const void *point2, resbuf *filter)
+SelectionSet::SelectionSet(const ACHAR* mode, const void *point1, const void *point2, const resbuf *filter)
     : m_length(0), m_mode(mode),
     m_point1(point1), m_point2(point2),
     m_filter(filter), m_ss{0L, 0L}
 {
 }
 
-//++--
 SelectionSet::~SelectionSet(void)
 {
-    if (m_filter != NULL) acutRelRb(m_filter);
     acedSSFree(m_ss);
 }
 
-//++--
 AcDbObjectIdArray SelectionSet::Select()
 {
     AcDbObjectIdArray m_ids;
@@ -39,13 +34,15 @@ AcDbObjectIdArray SelectionSet::Select()
     return m_ids;
 }
 
-const auto SelectionSet::entSel(const TCHAR* msg)
+const EntselResult SelectionSet::entSel(const TCHAR* msg /*= L"\nSelect Entity: "*/, const AcRxClass* desc /*= AcDbEntity::desc()*/)
 {
-    AcGePoint3d pnt;
     AcDbObjectId id;
-    Acad::ErrorStatus es = eOk;
-    ads_name name = { 0L, 0L };
-    if (acedEntSel(msg, name, asDblArray(pnt)) == RTNORM)
-        es = acdbGetObjectId(id, name);
-    return std::make_tuple(es, id, pnt);
+    AcGePoint3d pnt;
+    ads_name name = { 0L };
+    int res = acedEntSel(msg, name, asDblArray(pnt));
+    if (auto es = acdbGetObjectId(id, name); es != eOk)
+        return std::make_tuple(Acad::PromptStatus::eError, id, pnt);
+    if (!id.objectClass()->isDerivedFrom(desc))
+        return std::make_tuple(Acad::PromptStatus::eRejected, id, pnt);
+    return std::make_tuple(Acad::PromptStatus(res), id, pnt);
 }
