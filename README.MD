@@ -9,7 +9,7 @@
 
 ## How to build
 
-- Build wxWidgets as a static library withe compiler that's compatible with your ARX project
+- Build wxWidgets as a static library with a compiler that's compatible with your ARX project
 - Buld the project against your ObjectARX SDK
 
 ## Creating XRC files
