@@ -25,6 +25,7 @@ bool WxApp::OnInit()
     wxTheApp->SetTopWindow(new ArxTopLevelWindow());
     if (wxTheApp->GetTopWindow() == nullptr)
         return false;
+    wxTheApp->SetExitOnFrameDelete(false);
     return true;
 }
 
